@@ -1439,6 +1439,11 @@ a {
     .destaque h2 {
         font-size: 34px;
     }
+    .hero-assinatura{
+        text-align: center;
+        padding: 10px;
+       margin: 18px;
+    }
 
 
     /* GALERIA */
