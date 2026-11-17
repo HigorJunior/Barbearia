@@ -54,6 +54,13 @@ a {
 /* ========================================
    LOGOTIPO
 ======================================== */
+.logo img {
+    width: 80px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
 
 .logo {
     display: flex;
@@ -62,29 +69,7 @@ a {
     flex-shrink: 0;
 }
 
-.logo-numero {
-    font-family: 'Playfair Display', serif;
-    color: var(--dourado);
-    font-size: 43px;
-    line-height: 1;
-    font-weight: 700;
-}
 
-.logo-nome {
-    display: flex;
-    flex-direction: column;
-    color: var(--branco);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    line-height: 1.7;
-}
-
-.logo-nome strong {
-    color: var(--dourado);
-    font-size: 11px;
-    letter-spacing: 2.5px;
-}
 
 
 /* ========================================
@@ -95,7 +80,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #090909;
+    background: #1c1410;
     border-bottom: 1px solid rgba(201, 164, 92, 0.18);
 }
 
@@ -306,17 +291,18 @@ a {
     color: var(--dourado);
 }
 
-.hero-assinatura {
+.hero-conteudo .hero-assinatura {
     display: flex;
     align-items: center;
-    gap: 9px;
-    margin-top: 75px;
-    color: #aaa69e;
+    gap: 4px;
+    margin-top: 30px;
+    margin-left: 0;
+    padding: 0;
+    color: var(--dourado-claro);
     font-size: 9px;
-    letter-spacing: 1.7px;
+    letter-spacing: 1.8px;
     font-weight: 700;
 }
-
 .ponto-dourado {
     color: var(--dourado);
 }
@@ -834,12 +820,26 @@ a {
     font-size: clamp(34px, 4.5vw, 53px);
     font-weight: 500;
     line-height: 1.2;
+    
 }
 
 .destaque .botao-dourado {
     flex-shrink: 0;
 }
 
+.hero-assinatura {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 30px;
+    margin-left: 180px;
+    padding: 0;
+    color: var(--dourado-claro);
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    
+}
 
 /* ========================================
    GALERIA DE PRÓTESE CAPILAR
@@ -925,7 +925,7 @@ a {
 ======================================== */
 
 .contato {
-    background: #211810;
+    background: #0f0e0e;
 }
 
 .contato-grid {
@@ -942,7 +942,7 @@ a {
 
 .contato-informacoes {
     padding: 20px 35px;
-    background: #2a1e16;
+    background: #241a14;
     border: 1px solid #313030;
     border-top: 2px solid var(--dourado);
 }
@@ -990,21 +990,26 @@ a {
 ======================================== */
 
 .rodape {
-    background: #090909;
+    background: #1c1410;;
     border-top: 1px solid rgba(201, 164, 92, 0.2);
 }
 
 .rodape-principal {
-    min-height: 135px;
+    min-height: 105px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 18px;
 }
 
 .rodape-principal > p {
-    color: #99948a;
-    font-size: 12px;
+    color: var(--dourado);
+    font-size: 9px;
+    align-items: center;
+    color: var(--dourado-claro);
+    letter-spacing: 1.7px;
+    font-weight: 700;
+    
 }
 
 .voltar-topo {
@@ -1016,7 +1021,7 @@ a {
 }
 
 .voltar-topo:hover {
-    color: var(--dourado-claro);
+    color: var(--dourado);
 }
 
 .rodape-final {
@@ -1252,7 +1257,7 @@ a {
         margin-top: 45px;
         font-size: 8px;
         gap: 7px;
-        color: var(--dourado);
+        color: var(--dourado-claro);
     }
 
     .hero-indicador {
@@ -1485,16 +1490,35 @@ a {
         padding: 15px 22px;
     }
 
+/* RODAPÉ */
 
-    /* RODAPÉ */
+.rodape-principal {
+    min-height: auto;
+    padding: 5px 0;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
 
-    .rodape-principal {
-        min-height: auto;
-        padding: 35px 0;
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
+/* LOGO DO RODAPÉ NO MOBILE */
+.rodape-principal .logo img {
+    width: 60px;
+    
+}
+
+/* FRASE DO RODAPÉ */
+.rodape-principal p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* VOLTAR AO TOPO */
+.rodape-principal .voltar-topo {
+    margin: 0;
+    font-size: 11px;
+    padding: 7px 12px;
+    color: #d0d0d0;
+}
 
 }
 
