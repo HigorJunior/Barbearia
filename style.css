@@ -1509,13 +1509,13 @@ a {
 /* FRASE DO RODAPÉ */
 .rodape-principal p {
     margin: 0;
-    font-size: 13px;
+    font-size: 8px;
 }
 
 /* VOLTAR AO TOPO */
 .rodape-principal .voltar-topo {
     margin: 0;
-    font-size: 11px;
+    font-size: 10px;
     padding: 7px 12px;
     color: #d0d0d0;
 }
