@@ -124,6 +124,25 @@ a {
     color: var(--dourado);
 }
 
+/* BOTÃO HAMBÚRGUER */
+
+.menu-hamburguer {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-hamburguer span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin: 6px 0;
+    background: var(--dourado);
+    transition: 0.3s;
+}
+
 .botao-cabecalho {
     padding: 14px 19px;
     border: 1px solid var(--dourado);
@@ -172,40 +191,36 @@ a {
     display: flex;
     align-items: center;
     overflow: hidden;
-    background: #090909;
+    background: #303030;
 }
 
 .hero-imagem {
     position: absolute;
     inset: 0 0 0 36%;
     z-index: 0;
+    background: #151212;
 }
 
 .hero-imagem img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
+    object-position: right;
 }
 
 .hero-sombra {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background:
-        linear-gradient(
-            90deg,
-            #090909 0%,
-            #090909 31%,
-            rgba(9, 9, 9, 0.93) 42%,
-            rgba(9, 9, 9, 0.38) 72%,
-            rgba(9, 9, 9, 0.18) 100%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(9, 9, 9, 0.65),
-            transparent 45%
-        );
+    background: linear-gradient(
+        90deg,
+        #090909 0%,
+        #090909 30%,
+        rgba(9, 9, 9, 0.95) 42%,
+        rgba(9, 9, 9, 0.65) 55%,
+        rgba(9, 9, 9, 0.20) 68%,
+        transparent 78%
+    );
 }
 
 .hero-conteudo {
@@ -601,9 +616,6 @@ a {
     margin-bottom: 35px;
 }
 
-
-/* GRADE DOS DIFERENCIAIS */
-
 .diferenciais-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -611,15 +623,9 @@ a {
     row-gap: 35px;
 }
 
-
-/* CADA ITEM */
-
 .diferencial-item {
     min-width: 0;
 }
-
-
-/* ÍCONES */
 
 .diferencial-icone {
     width: 42px;
@@ -636,9 +642,6 @@ a {
     object-fit: contain;
 }
 
-
-/* TÍTULOS */
-
 .diferencial-item h3 {
     font-family: 'Playfair Display', serif;
     color: var(--branco);
@@ -647,9 +650,6 @@ a {
     line-height: 1.4;
     margin-bottom: 5px;
 }
-
-
-/* DESCRIÇÕES */
 
 .diferencial-item p {
     font-family: 'DM Sans', sans-serif;
@@ -695,17 +695,11 @@ a {
     max-width: 520px;
 }
 
-
-/* GRADE DOS PROFISSIONAIS */
-
 .equipe-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
-
-
-/* CARD INDIVIDUAL */
 
 .profissional-card {
     background: #211810;
@@ -717,9 +711,6 @@ a {
 .profissional-card:hover {
     border-color: var(--dourado);
 }
-
-
-/* FOTO */
 
 .profissional-foto {
     width: 100%;
@@ -739,9 +730,6 @@ a {
 .profissional-card:hover .profissional-foto img {
     transform: scale(1.04);
 }
-
-
-/* INFORMAÇÕES */
 
 .profissional-info {
     padding: 25px 22px;
@@ -763,9 +751,6 @@ a {
     font-weight: 500;
     margin-bottom: 20px;
 }
-
-
-/* BOTÃO CONHEÇA MAIS */
 
 .profissional-toggle {
     width: 100%;
@@ -797,9 +782,6 @@ a {
     transform: rotate(90deg);
 }
 
-
-/* DESCRIÇÃO EXPANSÍVEL */
-
 .profissional-detalhes {
     padding-top: 17px;
     animation: abrirDetalhes 0.3s ease;
@@ -814,9 +796,6 @@ a {
     font-size: 13px;
     line-height: 1.8;
 }
-
-
-/* ANIMAÇÃO */
 
 @keyframes abrirDetalhes {
     from {
@@ -963,8 +942,8 @@ a {
 
 .contato-informacoes {
     padding: 20px 35px;
-    background: #302319;
-    border: 1px solid #493323;
+    background: #2a1e16;
+    border: 1px solid #313030;
     border-top: 2px solid var(--dourado);
 }
 
@@ -988,7 +967,7 @@ a {
     justify-content: center;
     flex-shrink: 0;
     color: var(--dourado);
-    border: 1px solid rgba(201, 164, 92, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.4);
     font-size: 20px;
 }
 
@@ -1109,62 +1088,143 @@ a {
     }
 
     .secao {
-        padding: 75px 0;
+        padding: 48px 0;
     }
 
-    /* CABEÇALHO */
+    /* CABEÇALHO E MENU HAMBÚRGUER */
 
     .navegacao {
-        justify-content: center;
-        gap: 17px;
+        position: relative;
+        justify-content: space-between;
+        min-height: 75px;
+        padding: 12px 0;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 
     .logo-numero {
         font-size: 37px;
     }
 
-    .menu {
-        gap: 15px 20px;
+    .menu-hamburguer {
+        display: block;
+        order: 2;
+        flex-shrink: 0;
     }
 
-    .menu a {
-        font-size: 11px;
-    }
+    /* MENU MOBILE */
 
-    .botao-cabecalho {
-        padding: 12px 15px;
-        font-size: 9px;
-    }
+.menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    left: auto;
+    width: 210px;
+    padding: 12px 0;
+    background: #111111;
+    border: 1px solid rgba(201, 164, 92, 0.25);
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+}
 
+.menu.aberto {
+    display: flex;
+}
+
+.menu a {
+    padding: 13px 20px;
+    font-size: 12px;
+    color: #d0ccc4;
+    text-align: left;
+    border-bottom: 1px solid rgba(201, 164, 92, 0.10);
+}
+
+.menu a:last-child {
+    border-bottom: none;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+    background: rgba(201, 164, 92, 0.05);
+}
+
+    /* BOTÃO DE AGENDAMENTO FIXO NO CELULAR */
+.botao-cabecalho {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 1100;
+
+    padding: 14px 22px;
+    border: 1px solid var(--dourado);
+    border-radius: 4px;
+
+    background: var(--dourado);
+    color: #090909;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.botao-cabecalho:hover,
+.botao-cabecalho:active {
+    background: #090909;
+    color: var(--dourado);
+    border-color: var(--dourado);
+}
 
     /* BANNER */
 
     .hero {
         min-height: auto;
-        padding: 95px 0 65px;
+        padding: 30px 0 5px;
+        background: #090909;
     }
 
     .hero-imagem {
+        position: absolute;
         inset: 0;
-        opacity: 0.48;
+        opacity: 1;
+        background: #090909;
     }
 
     .hero-imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         object-position: center;
     }
 
     .hero-sombra {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
         background: linear-gradient(
             90deg,
-            rgba(9, 9, 9, 0.96),
-            rgba(9, 9, 9, 0.72)
+            rgba(9, 9, 9, 0.78) 0%,
+            rgba(9, 9, 9, 0.68) 30%,
+            rgba(9, 9, 9, 0.40) 60%,
+            rgba(9, 9, 9, 0.12) 100%
         );
     }
 
     .hero-conteudo {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
+    padding-top: 65px;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 2;
+}
 
     .hero h1 {
         font-size: clamp(43px, 11vw, 58px);
@@ -1173,13 +1233,18 @@ a {
 
     .hero-texto > p {
         font-size: 13px;
+        color: #ffffff;
+    }
+
+    .hero p span {
+        display: block;
     }
 
     .hero-acoes {
         align-items: flex-start;
         flex-direction: column;
         gap: 22px;
-        margin-top: 28px;
+        margin-top: 25px;
     }
 
     .hero-assinatura {
@@ -1187,6 +1252,7 @@ a {
         margin-top: 45px;
         font-size: 8px;
         gap: 7px;
+        color: var(--dourado);
     }
 
     .hero-indicador {
@@ -1197,13 +1263,13 @@ a {
     /* FAIXA */
 
     .faixa-identidade {
-        padding: 18px 0;
+        padding: 12px 0;
     }
 
     .faixa-conteudo {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 8px;
     }
 
     .faixa-conteudo span {
@@ -1216,7 +1282,7 @@ a {
 
     .sobre-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 30px;
     }
 
     .sobre-foto {
@@ -1310,7 +1376,7 @@ a {
 
     .espaco-item {
         flex: 0 0 100%;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 5 / 4;
     }
 
     .espaco-seta {
@@ -1323,11 +1389,11 @@ a {
     /* NOSSA EQUIPE */
 
     .equipe {
-        padding: 70px 0;
+        padding: 48px 0;
     }
 
     .equipe-cabecalho {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
     }
 
     .equipe-cabecalho h2 {
@@ -1339,16 +1405,18 @@ a {
     }
 
     .equipe-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+        grid-template-columns: 70%;
+        justify-content: center;
+        gap: 30px;
     }
 
     .profissional-foto {
-        aspect-ratio: 5 / 4;
+        aspect-ratio: 4 / 4.5;
+        width: 100%;
     }
 
     .profissional-info {
-        padding: 22px;
+        padding: 17px 18px;
     }
 
     .profissional-info h3 {
@@ -1359,21 +1427,25 @@ a {
     /* DESTAQUE */
 
     .destaque {
-        padding: 55px 0;
+        padding: 40px 0;
     }
 
     .destaque-conteudo {
         align-items: flex-start;
         flex-direction: column;
-        gap: 28px;
+        gap: 20px;
     }
 
     .destaque h2 {
-        font-size: 37px;
+        font-size: 34px;
     }
 
 
     /* GALERIA */
+
+    .galeria {
+        padding: 40px 0;
+    }
 
     .carrossel-protese {
         gap: 8px;
@@ -1381,7 +1453,9 @@ a {
 
     .carrossel-item {
         flex: 0 0 100%;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 3 / 4.5;
+        overflow: hidden;
+        border-radius: 12px;
     }
 
     .carrossel-seta {
@@ -1395,7 +1469,11 @@ a {
 
     .contato-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 25px;
+    }
+
+    .contato {
+        padding: 40px 0;
     }
 
     .contato-informacoes {
@@ -1456,4 +1534,11 @@ a {
         font-size: 31px;
     }
 
+}
+
+
+/* INFORMAÇÕES DE CONTATO */
+
+.contato-informacoes .informacao {
+    background: #15110e;
 }
