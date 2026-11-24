@@ -294,4 +294,25 @@ if (botaoMenu && menu) {
 
     });
 
+/* ========================================
+   BOTÃO VOLTAR AO TOPO
+======================================== */
+
+const botaoVoltarTopo = document.querySelector('.voltar-topo');
+
+if (botaoVoltarTopo) {
+
+    botaoVoltarTopo.addEventListener('click', (evento) => {
+
+        evento.preventDefault();
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    });
+
+}
+
 }
